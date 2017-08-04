@@ -1,5 +1,4 @@
-
-Thank you <%= @user.name %>, for choosing Jungle!
+Thank you <%= @order.email %>, for choosing Jungle!
 ===============================================
  
 You have successfully placed an order from Jungle.com,
@@ -9,9 +8,9 @@ Order ID: <%= @order.id %>
 Order:
 
 <% @order.line_items.each do |item|%>
-<%= item.product.name %> | Quantity: <%= item.quantity %> | <%= item.price * item.quantity %>
+<%= item.product.name %> | Quantity: <%= item.quantity %> | $<%= item.product.price * item.quantity %>
 <% end %>
 
-Order Total: <%= @order.total %> 
+Order Total: $<%= @order.total %> 
  
 Thanks for ordering and have a great day!
