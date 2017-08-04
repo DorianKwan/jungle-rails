@@ -27,23 +27,24 @@
         </li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
-      <!-- Link to logout and login, current no path exists
+      <% if current_user %>
         <li>
-          <%= link_to root_path do %>
+          <%= link_to '/logout' do %>
             Logout
           <% end %>
         </li>
-      -->
+      <% else %>
         <li>
-          <%= link_to new_session_path do %>
+          <%= link_to '/login' do %>
             Login
           <% end %>
         </li>
         <li>
-          <%= link_to new_user_path do %>
+          <%= link_to '/signup' do %>
             Register
           <% end %>
         </li>
+        <% end %>
         <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
 

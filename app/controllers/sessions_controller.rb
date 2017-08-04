@@ -1,14 +1,29 @@
 class SessionsController < ApplicationController
   
   def create
-    render 'new'
+    
+    user = User.find_by_email(session_params[:email])
+    if user && user.authenticate(session_params[:password])
+      session[:user_id] = user.id
+      redirect_to '/'
+    else
+      redirect_to '/login'
+    end
+
   end
 
   def new
-    @user = User.new
+    
   end
 
   def destroy
-    # stuff here
+    session[:user_id] = nil
+    redirect_to '/login'
+  end
+
+  private
+  
+  def session_params
+    params.require(:user).permit(:email, :password)
   end
 end

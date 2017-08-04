@@ -19,4 +19,9 @@ class ApplicationController < ActionController::Base
     cookies[:cart]
   end
 
+  def current_user
+    @user ||= User.find_by_id(session[:user_id])
+  end
+  helper_method :current_user
+
 end
