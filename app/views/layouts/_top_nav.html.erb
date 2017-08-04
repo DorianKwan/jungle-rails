@@ -27,6 +27,18 @@
         </li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
+      <!-- Link to logout and login, current no path exists
+        <li>
+          <%= link_to root_path do %>
+            Logout
+          <% end %>
+        </li>
+      -->
+        <li>
+          <%= link_to new_session_path do %>
+            Login
+          <% end %>
+        </li>
         <li>
           <%= link_to new_user_path do %>
             Register
