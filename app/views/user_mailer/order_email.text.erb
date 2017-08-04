@@ -1,0 +1,17 @@
+
+Thank you <%= @user.name %>, for choosing Jungle!
+===============================================
+ 
+You have successfully placed an order from Jungle.com,
+Here is your reciept for your order:
+
+Order ID: <%= @order.id %>
+Order:
+
+<% @order.line_items.each do |item|%>
+<%= item.product.name %> | Quantity: <%= item.quantity %> | <%= item.price * item.quantity %>
+<% end %>
+
+Order Total: <%= @order.total %> 
+ 
+Thanks for ordering and have a great day!
