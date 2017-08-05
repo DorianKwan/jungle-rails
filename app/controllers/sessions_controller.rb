@@ -7,8 +7,7 @@ class SessionsController < ApplicationController
       session[:user_id] = user.id
       redirect_to '/'
     else
-      flash[:notice] = 'Invalid user email or password.'
-      redirect_to '/login'
+      redirect_to '/login', flash: { error: 'Invalid user email or password.' }
     end
 
   end

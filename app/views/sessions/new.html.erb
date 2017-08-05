@@ -8,11 +8,6 @@
     <%= link_to 'Main Page', [:products], class: 'btn btn-info' %>
   </div>
 
-  <% if flash[:notice] %>
-    <div class="notice"><%= flash[:notice] %></div>
-    <br>
-  <% end %>
-
   <div class="row">
     <div class="col-sm-6 col-sm-offset-1">
       <%= form_for :user, url: '/login' do |form| %>
