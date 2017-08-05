@@ -93,3 +93,34 @@ main section.products-show {
   left: 100px;
   position: relative;
 }
+
+div.review.jumbotron {
+  padding-top: 0px;
+  padding-bottom: 0px;
+}
+div.review {
+  left: 11%;
+  position: relative;
+}
+
+.table {
+  position: fixed;
+  left: 43%;
+  top: 65%;
+  width: 50%;
+  .description {
+    position: relative;
+    width: 55%;
+  }
+}
+
+.table-view  {
+  position: relative;
+  left: 10%;
+  top: 25px;
+  width: 90%;
+  .description {
+    position: relative;
+    width: 55%;
+  }
+}
