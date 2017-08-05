@@ -23,17 +23,36 @@
           <dt>Price</dt>
           <dd><%= @product.price %></dd>
         </dl>
-        <% @product.reviews.each do |r| %>
+
+        <div class="col-sm-6">
+          <h4>Review:</h4>
+          <%= form_for [@product, @review] do |f| %>
+            <div class="form-group">
+              <%= f.label :rating %>
+              <br>
+              <%= f.select :rating, [1, 2, 3, 4, 5], prompt: 'Select' %>
+            </div>
+            <div class="form-group">
+              <%= f.label :description %>
+              <br>
+              <%= f.text_area :description, class: "form-control" %>
+            </div>
+            <div class="form-group">
+              <%= f.submit %>
+            </div>
+          <% end %>
+        </div>
+      </div>
+      <% @product.reviews.each do |review| %>
         <dl class="dl-horizontal">
           <dt>Reviews</dt>
-          <dd><%= r.user_id %><dd>
+          <dd><%= review.user_id %><dd>
           <dt>Description</dt>
-          <dd><%= r.description %><dd>
+          <dd><%= review.description %><dd>
           <dt>Rating</dt>
-          <dd><%= r.rating %>/5<dd>
+          <dd><%= review.rating %>/5<dd>
         </dl>
-        <% end %>
-      </div>
+      <% end %>
     </div>
 
   </article>
