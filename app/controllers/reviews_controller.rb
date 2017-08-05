@@ -5,10 +5,16 @@ class ReviewsController < ApplicationController
     @review      = @product.reviews.create review_params
     @review.user = current_user
     if @review.save
-      redirect_to product_path(@product), notice: 'Review created!'
+      redirect_to product_path(@product), notice: 'Your review has been posted!'
     else
-      redirect_to product_path(@product), flash: { error: 'Review failed to create' }
+      redirect_to product_path(@product), flash: { error: 'Failed to create review' }
     end
+  end
+
+  def destroy
+    @review = Review.find params[:id]
+    @review.destroy!
+    redirect_to @review.product, flash: { error: 'Review deleted!' }
   end
 
   private

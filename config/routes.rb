@@ -6,6 +6,7 @@ Rails.application.routes.draw do
     resources :reviews, only: [:create]
   end
   resources :categories, only: [:show]
+  resources :reviews, only: [:destroy]
 
   get '/signup' => 'users#new'
   post '/users' => 'users#create'
