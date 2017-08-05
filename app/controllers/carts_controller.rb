@@ -1,6 +1,9 @@
 class CartsController < ApplicationController
 
   def show
+    if !current_user
+      redirect_to products_path, flash: { error: 'You must login to view cart' }
+    end
   end
 
   def add_item
