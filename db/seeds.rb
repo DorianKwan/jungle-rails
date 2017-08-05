@@ -132,5 +132,18 @@ cat3.products.create!({
   price: 2_483.75
 })
 
+## REVIEWS
+
+User.create(first_name: 'Test', last_name: 'testing', email: 'stuff@mail.com', password: '123')
+
+puts "Re-creating Reviews ..."
+
+Review.destroy_all
+
+Review.create(product_id: 1, user_id: 1, description: 'Test', rating: 5)
+
+Review.create(product_id: 2, user_id: 1, description: 'TESTING..', rating: 5)
+
+Review.create(product_id: 3, user_id: 1, description: 'Meh.. 1', rating: 3)
 
 puts "DONE!"
