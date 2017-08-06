@@ -21,6 +21,29 @@ Use Credit Card # 4111 1111 1111 1111 for testing success scenarios.
 
 More information in their docs: <https://stripe.com/docs/testing#cards>
 
+## Screenshots
+
+Main Products Page
+![Alt text](/app/assets/images/products.png?raw=true "Products")
+
+Registration Page
+![Alt text](/app/assets/images/register.png?raw=true "Register")
+
+Login Page
+![Alt text](/app/assets/images/login.png?raw=true "Login")
+
+Product Page
+![Alt text](/app/assets/images/product.png?raw=true "Product")
+
+Cart Page
+![Alt text](/app/assets/images/cart.png?raw=true "Cart")
+
+Stripe Window
+![Alt text](/app/assets/images/stripe.png?raw=true "Stripe")
+
+Order Page
+![Alt text](/app/assets/images/order.png?raw=true "Order")
+
 ## Dependencies
 
 * Rails 4.2 [Rails Guide](http://guides.rubyonrails.org/v4.2/)
