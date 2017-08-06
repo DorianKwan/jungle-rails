@@ -7,8 +7,8 @@ Here is your reciept for your order:
 Order ID: <%= @order.id %>
 Order:
 
-<% @order.line_items.each do |item|%>
-<%= | item.product.name %> || Quantity: <%= item.quantity %> || $<%= item.product.price * item.quantity | %>
+<% @order.line_items.each do |item| %>
+| <%= item.product.name %> || Quantity: <%= item.quantity %> || $<%= item.product.price * item.quantity %> |
 <% end %>
 
 Order Total: $<%= @order.total %> 
