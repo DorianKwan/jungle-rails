@@ -132,18 +132,52 @@ cat3.products.create!({
   price: 2_483.75
 })
 
-## REVIEWS
+## Users
 
-User.create(first_name: 'Test', last_name: 'testing', email: 'stuff@mail.com', password: '123')
+puts "Re-creating Users"
+
+User.create(first_name: 'John', last_name: 'Doe', email: 'johndoe@jungle.com', password: 'testing', password_confirmation: 'testing')
+
+User.create(first_name: 'Jane', last_name: 'Doe', email: 'janedoe@jungle.com', password: 'testing', password_confirmation: 'testing')
+
+User.create(first_name: 'Jack', last_name: 'Jones', email: 'jackjones@jungle.com', password: 'testing', password_confirmation: 'testing')
+
+User.create(first_name: 'Jill', last_name: 'Jones', email: 'jilljones@jungle.com', password: 'testing', password_confirmation: 'testing')
+
+User.create(first_name: 'Jade', last_name: 'Jackson', email: 'jadejackson@jungle.com', password: 'testing', password_confirmation: 'testing')
+
+## REVIEWS
 
 puts "Re-creating Reviews ..."
 
 Review.destroy_all
 
-Review.create(product_id: 1, user_id: 1, description: 'Test', rating: 5)
+Review.create(product_id: 12, user_id: 1, description: 'Beautiful red bookshelf complimented my living room nicely.', rating: 5)
 
-Review.create(product_id: 2, user_id: 1, description: 'TESTING..', rating: 5)
+Review.create(product_id: 12, user_id: 5, description: 'Elegant bookshelf. If you are looking to store many books I would stay away.', rating: 4)
 
-Review.create(product_id: 3, user_id: 1, description: 'Meh.. 1', rating: 3)
+Review.create(product_id: 11, user_id: 2, description: 'This product is a little behind the times.', rating: 3)
+
+Review.create(product_id: 10, user_id: 3, description: 'Perfect if you sleep like a log.', rating: 1)
+
+Review.create(product_id: 9, user_id: 4, description: 'A little too big if you ask me.', rating: 3)
+
+Review.create(product_id: 8, user_id: 1, description: 'Does not cut as advertised. DO NOT WASTE YOUR MONEY!', rating: 1)
+
+Review.create(product_id: 8, user_id: 2, description: 'I like to use this product to add hot dog slices to my mac and cheese', rating: 5)
+
+Review.create(product_id: 7, user_id: 2, description: 'Very hard to use', rating: 2)
+
+Review.create(product_id: 6, user_id: 3, description: 'Great for a weird costume!', rating: 5)
+
+Review.create(product_id: 5, user_id: 4, description: 'As a Russian spy, this is the only place I come to buy my shoes!', rating: 5)
+
+Review.create(product_id: 4, user_id: 5, description: 'Meh..', rating: 3)
+
+Review.create(product_id: 3, user_id: 5, description: 'Meh..', rating: 3)
+
+Review.create(product_id: 2, user_id: 3, description: 'The picture lies.. They do not fit well.', rating: 2)
+
+Review.create(product_id: 1, user_id: 3, description: "It's classy", rating: 5)
 
 puts "DONE!"
