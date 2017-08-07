@@ -5,7 +5,7 @@ RSpec.describe Product, type: :model do
 
   describe 'Validations' do
 
-    it 'is valid with valid attributes' do
+    it 'are valid with valid attributes' do
       @category = Category.create(name: 'test')
       @product  = Product.create(
         name: 'sunglasses', 
@@ -16,7 +16,7 @@ RSpec.describe Product, type: :model do
       expect(@product).to be_valid
     end
 
-    it 'is not valid with missing name attribute' do
+    it 'are not valid with missing name attribute' do
       @category = Category.create(name: 'test')
       @product  = Product.create(
         name: nil, 
@@ -27,7 +27,7 @@ RSpec.describe Product, type: :model do
       expect(@product.errors.full_messages).to include("Name can't be blank")
     end
 
-    it 'is not valid with missing price attribute' do
+    it 'are not valid with missing price attribute' do
       @category = Category.create(name: 'test')
       @product  = Product.create(
         name: 'sunglasses', 
@@ -38,7 +38,7 @@ RSpec.describe Product, type: :model do
       expect(@product.errors.full_messages).to include("Price cents can't be blank")
     end
 
-    it 'is not valid with missing quantity attribute' do
+    it 'are not valid with missing quantity attribute' do
       @category = Category.create(name: 'test')
       @product  = Product.create(
         name: 'sunglasses', 
@@ -49,7 +49,7 @@ RSpec.describe Product, type: :model do
       expect(@product.errors.full_messages).to include("Quantity can't be blank")
     end
 
-    it 'is not valid with missing catergory attribute' do
+    it 'are not valid with missing catergory attribute' do
       @category = Category.create(name: 'test')
       @product  = Product.create(
         name: 'sunglasses', 
