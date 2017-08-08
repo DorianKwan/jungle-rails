@@ -128,4 +128,31 @@ RSpec.describe User, type: :model do
       expect(@user_password_too_long.errors.full_messages).to include("Password is too long (maximum is 16 characters)")
     end
   end
+  
+
+  describe '.authenticate_with_credentials' do
+    before :each do
+      @user = User.find_by_email('johndoe@jungle.com')
+      @valid_user = User.authenticate_with_credentials('johndoe@jungle.com', 'testing')
+      @invalid_user = User.authenticate_with_credentials('johndoe2@jungle.com', 'testing')
+      @user_white_space = User.authenticate_with_credentials(' johndoe@jungle.com ', 'testing')
+      @user_case_email = User.authenticate_with_credentials('johNdoe@juNgle.com', 'testing')      
+    end
+
+    it 'is valid when passing it the exact email and password as in db' do
+      expect(@valid_user).to eq(@user)
+    end
+
+    it 'is valid when passing it the exact email and password as in db' do
+      expect(@invalid_user).to eq(nil)
+    end
+  
+    it 'is valid when passing it the exact email and password as in db' do
+      expect(@user_white_space).to eq(@user)
+    end
+
+    it 'is valid when passing it the exact email and password as in db' do
+      expect(@user_case_email).to eq(@user)
+    end
+  end
 end
