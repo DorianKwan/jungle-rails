@@ -1,3 +1,4 @@
+require 'pry'
 class User < ActiveRecord::Base
 
   has_secure_password
@@ -10,4 +11,13 @@ class User < ActiveRecord::Base
   validates :password, confirmation: true, length: { in: 5..16  }
   validates :password_confirmation, presence: true
 
+  def self.authenticate_with_credentials email, password
+    user = User.find_by_email(email.strip.downcase)
+    puts user.inspect
+    if user && user.authenticate(password)
+      user
+    else
+      nil
+    end
+  end
 end
